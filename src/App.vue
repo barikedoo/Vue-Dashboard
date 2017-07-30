@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    
+  
     <app-sidebar></app-sidebar>
     <app-content></app-content>
-
+  
   </div>
 </template>
 
@@ -13,14 +13,15 @@ import Sidebar from './components/Sidebar.vue'
 import Content from './components/Content.vue'
 import Upload from './components/Upload.vue'
 
+
 export default {
 
   components: {
     'app-sidebar': Sidebar,
-    'app-content': Content
+    'app-content': Content,
   },
 
-  data () {
+  data() {
     return {
     }
   }

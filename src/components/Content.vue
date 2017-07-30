@@ -1,29 +1,35 @@
 <template>
     <div id="content">
-    <app-album></app-album>
+         <app-blog></app-blog>
     </div>
 </template>
 
 
-
 <script>
 
-import SingleAlbum from './SingleAlbum.vue'
+import { bus } from '../main'
+
+import Albums from './Albums.vue'
+import Upload from './Upload.vue'
+import Blog from './Blog.vue'
 
 export default {
 
     components: {
-        'app-album': SingleAlbum
+        'app-albums': Albums,
+        'app-load': Upload,
+        'app-blog': Blog
+
     },
 
     data() {
         return {
-
+            activeComponent: Blog
         }
     },
     methods: {
-
-    }
+        
+    },
 }
 </script>
 
@@ -32,5 +38,4 @@ export default {
     background: #fafafa;
     width: 83%;
 }
-
 </style>

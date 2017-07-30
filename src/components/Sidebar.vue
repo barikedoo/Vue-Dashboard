@@ -4,9 +4,10 @@
         <div class="sidebar__header">
     
             <div class="sidebar__header__avatar">
+                <img style="width:100%" src="https://s-media-cache-ak0.pinimg.com/originals/4b/5f/3f/4b5f3f1fa9983d72ab476c1f9c26e458.jpg" alt="">
             </div>
     
-            <span class="sidebar__header__name">Tirion Lanister</span>
+            <span class="sidebar__header__name">Tyrion Lannister</span>
     
             <span class="sidebar__header__total-files">200 files</span>
     
@@ -21,7 +22,7 @@
         <div class="sidebar__lists">
             <h2 class="sidebar__lists__h2">Categories</h2>
             <li class="sidebar__lists__item">Photos</li>
-            <li class="sidebar__lists__item">Videos</li>
+            <li class="sidebar__lists__item">Blog</li>
             <li class="sidebar__lists__item">Projects</li>
         </div>
     
@@ -46,10 +47,13 @@
 </template>
 
 <script>
+
+import { bus } from '../main'
+
 export default {
     data() {
         return {
-
+            activeComponent: ''
         }
     },
     methods: {
@@ -100,7 +104,8 @@ export default {
         &__avatar {
             display: block;
             border-radius: 50%;
-            background-color: #ffffff;
+            // background-color: #ffffff;
+            overflow: hidden;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
             width: 80px;
             height: 80px;
@@ -122,18 +127,18 @@ export default {
         }
 
         &__upload {
-            background-color: #ea5a5a;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-            width: 160px;
-            height: 36px;
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 400;
-            border: none;
-            border-radius: 16px;
-            margin: 21px auto 32px;
-            text-transform: uppercase;
-            outline: none;
+                background-color: #ea5a5a;
+                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+                width: 160px;
+                height: 36px;
+                color: #ffffff;
+                font-size: 15px;
+                font-weight: 400;
+                border: none;
+                border-radius: 16px;
+                margin: 21px auto 32px;
+                text-transform: uppercase;
+                outline: none;
 
             &:hover {
                 cursor: pointer;

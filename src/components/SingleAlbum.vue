@@ -20,12 +20,12 @@
 
 <script>
 
-import AlbumItem from './AlbumItem.vue'
+import SinglePhoto from './SinglePhoto.vue'
 
 export default {
 
     components: {
-        'app-photo': AlbumItem
+        'app-photo': SinglePhoto
     },
 
     data() {

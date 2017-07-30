@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueResouce from 'vue-resource'
 
+Vue.use(VueResouce);
 
-var Bus = new Vue({
+export const bus = new Vue({
   
 });
 
