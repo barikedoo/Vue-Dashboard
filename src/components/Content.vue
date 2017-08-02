@@ -37,5 +37,6 @@ export default {
 #content {
     background: #fafafa;
     width: 83%;
+    box-sizing: border-box;
 }
 </style>

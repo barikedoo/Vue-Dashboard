@@ -1,39 +1,52 @@
 <template>
-    <article class="post">
+    <article class="post" :style="{width: postWidth }">
+        <a href="">
     
-        <div class="post__title"> {{ title }} </div>
+            <div class="post__title"> {{ propPost.title }} </div>
     
-        <div class="post__image">
-             <img :src="image" alt="" class="post__image__pic"> 
-        </div>
+            <div class="post__image">
+                <img :src="propPost.image" alt="" class="post__image__pic">
+            </div>
     
-        <div class="post__preview"> {{ text }} </div>
+            <div class="post__preview"> {{ propPost.body }} </div>
     
-        <div class="post__tags">
-            <span class="post__tags__tag" :key="tag.id" v-for="tag in tags"> {{ tag }} </span>
-        </div>
-
-        <div class="post__date">
-            <span> Posted : {{ date }} </span>
+            <div class="post__tags">
+                <span class="post__tags__tag" :key="tag.id" v-for="tag in propPost.hashTags"> {{ tag }} </span>
+            </div>
+    
+            <div class="post__date">
+                <span> {{ propPost.date }} </span>
+        </a>
         </div>
     
     </article>
 </template>
 
 <script>
+
+import { bus } from '../main'
+
 export default {
+
+    props: ['propPost'],
+
     data() {
         return {
-            title: 'New post from a single post item',
-            image: 'https://unsplash.it/300/250?image=972',
-            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae aut doloribus facere voluptas cum architecto praesentium commodi expedita saepe unde.',
-            tags: ['#dark', '#skyscraper', '#NYC'],
-            date: '30.07.2017'
+            date: '',
+            postWidth: '24%'
         }
     },
     methods: {
 
-    }
+    },
+    created() {
+
+        bus.$on('showTable', (data) => {
+            this.postWidth = data;
+        });
+
+        console.log(this.propPost);
+    },
 }
 </script>
 
@@ -43,11 +56,9 @@ export default {
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 1.5%;
-    border:1px solid transparent;
+    border: 1px solid transparent;
 
-        &:hover {
-            border-color: lightslategrey;
-        }
+
 
     &__title {
         font-size: 24px;
@@ -63,28 +74,30 @@ export default {
     }
 
     &__preview {
-        white-space: nowrap;
+        // white-space: nowrap; 
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
-    &__tags{
+    &__tags {
         margin-top: 10px;
 
-            &__tag{
-                font-size: 14px;
-                padding: 0 3px;
-            }
+        &__tag {
+            font-size: 14px;
+            padding: 0 3px;
+            color: blue;
+        }
     }
 
     &__date {
-        margin-top: 5px;
         font-size: 12px;
         text-align: right;
         color: grey;
     }
 
-    &__title, &__tags__tag, &__preview {
+    &__title,
+    &__tags__tag,
+    &__preview {
         &:hover {
             text-decoration: underline;
             cursor: pointer;

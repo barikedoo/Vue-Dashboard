@@ -2,7 +2,7 @@
     <article id="photo" class="photo">
     
         <div class="photo__image" @mouseover="show = true" @mouseout="show = false">
-            <img src="https://unsplash.it/260/180?image=1" alt="" class="photo__image__pic">
+            <img src="http://lorempixel.com/260/180/sports/" alt="" class="photo__image__pic">
     
             <div class="photo__image__panel" v-if="show">
                 <p class="image__info">5:40</p>

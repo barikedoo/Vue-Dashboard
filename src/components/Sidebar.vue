@@ -38,8 +38,8 @@
     
         <div class="sidebar__filters">
     
-            <div class="sidebar__filters__4">4</div>
-            <div class="sidebar__filters__2">2</div>
+            <div class="sidebar__filters__4" @click="show_4">4</div>
+            <div class="sidebar__filters__2" @click="show_2">2</div>
     
         </div>
     
@@ -53,11 +53,17 @@ import { bus } from '../main'
 export default {
     data() {
         return {
-            activeComponent: ''
+            activeComponent: '',
+
         }
     },
     methods: {
-
+        show_4() {
+            bus.$emit('showTable', '24%')
+        },
+        show_2() {
+            bus.$emit('showTable', '48%')
+        },
     },
 
 }    
@@ -97,6 +103,10 @@ export default {
 }
 
 .sidebar {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    min-height: 950px;
 
     &__header {
         text-align: center;
@@ -104,7 +114,6 @@ export default {
         &__avatar {
             display: block;
             border-radius: 50%;
-            // background-color: #ffffff;
             overflow: hidden;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
             width: 80px;
@@ -127,18 +136,18 @@ export default {
         }
 
         &__upload {
-                background-color: #ea5a5a;
-                box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-                width: 160px;
-                height: 36px;
-                color: #ffffff;
-                font-size: 15px;
-                font-weight: 400;
-                border: none;
-                border-radius: 16px;
-                margin: 21px auto 32px;
-                text-transform: uppercase;
-                outline: none;
+            background-color: #ea5a5a;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+            width: 160px;
+            height: 36px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 400;
+            border: none;
+            border-radius: 16px;
+            margin: 21px auto 32px;
+            text-transform: uppercase;
+            outline: none;
 
             &:hover {
                 cursor: pointer;
@@ -209,17 +218,21 @@ export default {
     }
 
     &__filters {
-        margin-top: 140px;
+        bottom: 0%;
+        position: fixed;
         display: flex;
         height: 40px;
+        width: inherit;
         background: #19181e;
-        justify-content: space-between;
+        justify-content: space-around;
+
+
 
         &__4,
         &__2 {
             display: block;
             color: #ea5a5a;
-            padding: 8px 35px;
+            margin: 8px 35px;
 
             &:hover {
                 color: lighten(#ea5a5a, 10%);
