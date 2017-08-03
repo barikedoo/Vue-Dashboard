@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Dashboard</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCc7qLJ8zKjjYN9WfZ6iPvBeq1sB8Y3LVs",
+      authDomain: "vue-dashboard-dfb16.firebaseapp.com",
+      databaseURL: "https://vue-dashboard-dfb16.firebaseio.com",
+      projectId: "vue-dashboard-dfb16",
+      storageBucket: "vue-dashboard-dfb16.appspot.com",
+      messagingSenderId: "669428299831"
+    };
+    firebase.initializeApp(config);
+  </script>  
+  <script src="/dist/build.js"></script>
+</body>
+
+</html>
