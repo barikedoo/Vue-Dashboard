@@ -35,7 +35,6 @@ export default {
   margin: 0 auto;
 }
 
-
 .post__button {
     background-color: #ea5a5a;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);

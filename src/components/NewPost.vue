@@ -74,7 +74,6 @@ export default {
 
             }
         },
-
         addHashtag() {
             if (hashTag.trim().length > 1) {
                 if (hashTag.charAt(0) == '#') {
