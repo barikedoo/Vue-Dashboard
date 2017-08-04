@@ -1,6 +1,6 @@
 <template>
     <section class="add-post">
-        <modal name="new-post">
+        <modal name="new-post" height="auto" :pivotY="0.1" :adaptive="true">
             <form action="" class="add-post__form" draggable="true" adaptive="true">
     
                 <h2 class="add-post__title">Add new post</h2>

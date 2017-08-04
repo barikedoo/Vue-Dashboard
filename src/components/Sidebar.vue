@@ -21,8 +21,8 @@
     
         <div class="sidebar__lists">
             <h2 class="sidebar__lists__h2">Categories</h2>
-            <li class="sidebar__lists__item">Photos</li>
-            <li class="sidebar__lists__item">Blog</li>
+            <li class="sidebar__lists__item" @click="activeComponent = 'albums'">Photos</li>
+            <li class="sidebar__lists__item" @click="activeComponent = 'blog'">Blog</li>
             <li class="sidebar__lists__item">Projects</li>
         </div>
     
@@ -50,6 +50,7 @@
 
 import { bus } from '../main'
 
+
 export default {
     data() {
         return {
@@ -60,16 +61,20 @@ export default {
     },
     methods: {
         show_4() {
-            bus.$emit('showTable', '24%')
+            bus.$emit('showTable', '24%');
         },
         show_2() {
             bus.$emit('showTable', '48%')
         },
+
     },
     created() {
-        bus.$on('totalPostsNumer',(data) =>{
+        bus.$on('totalPostsNumer', (data) => {
             this.allItems = data;
-        }); 
+        });
+    },
+    beforeUpdate() {
+        bus.$emit('changeComponent', this.activeComponent);
     }
 }    
 </script>

@@ -49,6 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+
+
 a {
     color: black;
     text-decoration: none;

@@ -2,11 +2,6 @@
     margin: 0;
     padding: 0;
 }
-.v--modal-box {
-    height: auto!important;
-    top:10%!important;
-    opacity: 1!important;
-}
 
 .v--modal-overlay {
   background: rgba(29, 26, 26, 0.69)!important;

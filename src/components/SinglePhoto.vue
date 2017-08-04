@@ -1,7 +1,7 @@
 <template>
     <article id="photo" class="photo">
     
-        <div class="photo__image" @mouseover="show = true" @mouseout="show = false">
+        <div class="photo__image" @mouseover:class="" >
             <img src="http://lorempixel.com/260/180/sports/" alt="" class="photo__image__pic">
     
             <div class="photo__image__panel" v-if="show">
@@ -23,11 +23,13 @@ export default {
         return {
             show: false
         }
-    }
+    },
+   
 }
 </script>
 
 <style scoped lang="scss">
+
 .photo {
 
     width: 24%;
@@ -70,6 +72,8 @@ export default {
             color: #ffffff;
             justify-content: space-around;
             line-height: 30px;
+            opacity: 0;
+            transition: all ease-out 1s;  
         }
     }
 }
@@ -77,5 +81,9 @@ export default {
 .image__info {
     font-size: 12px;
     font-weight: 400;
+}
+
+.panel__active {
+    opacity: 1;
 }
 </style>

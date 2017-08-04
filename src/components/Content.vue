@@ -1,11 +1,15 @@
 <template>
     <div id="content">
-         <app-blog></app-blog>
+    
+        <!-- <app-blog></app-blog> -->
+        <component :is="activeComponent"></component>
+    
     </div>
 </template>
 
 
 <script>
+
 
 import { bus } from '../main'
 
@@ -19,7 +23,6 @@ export default {
         'app-albums': Albums,
         'app-load': Upload,
         'app-blog': Blog
-
     },
 
     data() {
@@ -27,8 +30,16 @@ export default {
             activeComponent: Blog
         }
     },
-    methods: {
-        
+    created() {
+
+        bus.$on('changeComponent', (data) => {
+            if(data == 'albums') {
+                this.activeComponent = Albums;
+            }else if(data == 'blog') {
+                this.activeComponent = Blog;
+            }
+        })
+
     },
 }
 </script>

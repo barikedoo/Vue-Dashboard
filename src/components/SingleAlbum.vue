@@ -7,10 +7,12 @@
         </div>
     
         <div class="album__photos">
+    
             <app-photo></app-photo>
             <app-photo></app-photo>
             <app-photo></app-photo>
             <app-photo></app-photo>
+            
         </div>
     
     </div>
