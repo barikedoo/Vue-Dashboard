@@ -42,7 +42,7 @@ export default {
                 }
                 this.allPosts = postsArray;
                 this.totalPosts = this.allPosts.length;
-                console.log(this.totalPosts); 
+                bus.$emit('totalPostsNumer', this.totalPosts +' posts'); 
             });
         },
 

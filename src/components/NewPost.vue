@@ -63,6 +63,7 @@ export default {
             } else {
                 var moment = require('moment');
                 this.post.date = moment().format('MMMM Do YYYY, h:mm:ss')
+                
                 this.$http.post('https://vue-dashboard-dfb16.firebaseio.com/posts.json',
                     this.post).then(function (data) {
                         this.submited = true;

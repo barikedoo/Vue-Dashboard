@@ -9,7 +9,7 @@
     
             <span class="sidebar__header__name">Tyrion Lannister</span>
     
-            <span class="sidebar__header__total-files">200 files</span>
+            <span class="sidebar__header__total-files"> {{ allItems }} total</span>
     
             <button class="sidebar__header__upload">Upload</button>
     
@@ -54,6 +54,7 @@ export default {
     data() {
         return {
             activeComponent: '',
+            allItems: ''
 
         }
     },
@@ -65,7 +66,11 @@ export default {
             bus.$emit('showTable', '48%')
         },
     },
-
+    created() {
+        bus.$on('totalPostsNumer',(data) =>{
+            this.allItems = data;
+        }); 
+    }
 }    
 </script>
 

@@ -7,6 +7,7 @@ Vue.use(VModal)
 
 Vue.use(VueResouce);
 
+
 export const bus = new Vue({
   
 });
