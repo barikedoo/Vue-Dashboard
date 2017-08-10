@@ -1,9 +1,8 @@
 <template>
     <div id="content">
-    
-        <!-- <app-blog></app-blog> -->
-        <component :is="activeComponent"></component>
-    
+        <transition appear enter-active-class="animated fadeInDown">
+            <component :is="activeComponent"></component>
+        </transition>
     </div>
 </template>
 
@@ -33,9 +32,9 @@ export default {
     created() {
 
         bus.$on('changeComponent', (data) => {
-            if(data == 'albums') {
+            if (data == 'albums') {
                 this.activeComponent = Albums;
-            }else if(data == 'blog') {
+            } else if (data == 'blog') {
                 this.activeComponent = Blog;
             }
         })

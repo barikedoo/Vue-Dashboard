@@ -67,8 +67,11 @@ export default {
                 this.$http.post('https://vue-dashboard-dfb16.firebaseio.com/posts.json',
                     this.post).then(function (data) {
                         this.submited = true;
-                        ;
-                        console.log(this.post.date);
+                        console.log(data);
+                        if(data.status === 200) {
+                            console.log('Збс');
+                        }
+                        console.log(this.post.date);    
                         this.post = {}
                         this.$emit('updatePosts');
                     });

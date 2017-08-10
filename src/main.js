@@ -10,10 +10,10 @@ Vue.use(VueResouce);
 Vue.directive('ripple', Ripple);
 
 export const bus = new Vue({
-  
+
 });
 
 new Vue({
-  el: '#app',
-  render: h => h(App)
+    el: '#app',
+    render: h => h(App)
 })

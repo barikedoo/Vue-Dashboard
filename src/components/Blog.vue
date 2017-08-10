@@ -1,11 +1,11 @@
 <template>
     <section id="blog">
         <div class="button_wrapper">
-             <button class="post__button" @click="showModal">Add new post</button> 
+            <button class="post__button" @click="showModal">Add new post</button>
         </div>
-
-            <app-new-post @updatePosts="loadData()"></app-new-post>
-
+    
+        <app-new-post @updatePosts="loadData()"></app-new-post>
+    
         <app-post v-bind:propPost='post' :key="post.id" v-for="post in allPosts"></app-post>
     
     </section>
@@ -27,7 +27,8 @@ export default {
     data() {
         return {
             allPosts: [],
-            totalPosts: ''
+            totalPosts: '',
+
         }
     },
     methods: {
@@ -42,7 +43,8 @@ export default {
                 }
                 this.allPosts = postsArray;
                 this.totalPosts = this.allPosts.length;
-                bus.$emit('totalPostsNumer', this.totalPosts +' posts'); 
+                bus.$emit('totalPostsNumer', this.totalPosts + ' posts');
+                console.log(this.allPosts);
             });
         },
 
@@ -55,12 +57,10 @@ export default {
     },
     created() {
 
-        bus.$on('postCancelled',() => {
+        bus.$on('postCancelled', () => {
             this.hideModal();
         });
-
         this.loadData();
-
     }
 }
 </script>

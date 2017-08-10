@@ -1,25 +1,26 @@
 <template>
-    <article class="post" :style="{width: postWidth }">
-        <a href="">
+
+        <article class="post" :style="{width: postWidth }">
+            <a href="">
     
-            <div class="post__title"> {{ propPost.title }} </div>
+                <div class="post__title"> {{ propPost.title }} </div>
     
-            <div class="post__image">
-                <img :src="propPost.image" alt="" class="post__image__pic">
-            </div>
+                <div class="post__image">
+                    <img :src="propPost.image" alt="" class="post__image__pic">
+                </div>
     
-            <div class="post__preview"> {{ propPost.body }} </div>
+                <div class="post__preview"> {{ propPost.body }} </div>
     
-            <div class="post__tags">
-                <span class="post__tags__tag" :key="tag.id" v-for="tag in propPost.hashTags"> {{ tag }} </span>
-            </div>
+                <div class="post__tags">
+                    <span class="post__tags__tag" :key="tag.id" v-for="tag in propPost.hashTags"> {{ tag }} </span>
+                </div>
     
-            <div class="post__date">
-                <span> {{ propPost.date }} </span>
+                <div class="post__date">
+                    <span> {{ propPost.date }} </span>
     
-            </div>
-        </a>
-    </article>
+                </div>
+            </a>
+        </article>
 </template>
 
 <script>
@@ -49,9 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-
 a {
     color: black;
     text-decoration: none;
